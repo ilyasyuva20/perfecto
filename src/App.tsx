@@ -25,8 +25,8 @@ const SERVICES = [
     title: 'Premium Foam Wash',
     icon: Droplets,
     description: 'A touchless pH-neutral active foam treatment designed to safely lift dirt without scratching your clear coat.',
-    features: ['Double-bucket grit guard method', 'Deep wheel barrel & tire cleaning', 'Warm air blowout for crevices', 'Spot-free water filtration rinse'],
-    price: '₹599 onwards',
+    features: ['Triple-bucket grit guard method', 'Deep wheel barrel & tire cleaning', 'Warm air blowout for crevices', 'Spot-free water filtration rinse'],
+    price: '₹349 onwards',
     badge: 'Popular'
   },
   {
@@ -179,6 +179,13 @@ export default function App() {
                 Services
               </a>
               <a
+                href="#monthly-plan"
+                onClick={(e) => handleLinkClick(e, 'monthly-plan')}
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-200"
+              >
+                Monthly Plan
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => handleLinkClick(e, 'contact')}
                 className="text-gray-300 hover:text-cyan-400 transition-colors duration-200"
@@ -189,13 +196,19 @@ export default function App() {
 
             {/* Desktop CTA Call Button */}
             <div className="hidden md:block">
-              <a
+              <motion.a
                 href="tel:+919992225924"
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-cyan-400 to-teal-500 hover:from-cyan-300 hover:to-teal-400 text-black font-semibold rounded-full shadow-lg shadow-cyan-400/20 hover:scale-105 active:scale-95 transition-all duration-200"
+                animate={{
+                  backgroundColor: ['#22d3ee', '#ef4444', '#22d3ee'],
+                  boxShadow: ['0px 0px 15px rgba(34,211,238,0.4)', '0px 0px 25px rgba(239,68,68,0.7)', '0px 0px 15px rgba(34,211,238,0.4)'],
+                  color: ['#000000', '#ffffff', '#000000']
+                }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                className="inline-flex items-center gap-2 px-6 py-2.5 font-bold rounded-full hover:scale-105 active:scale-95 transition-transform duration-200"
               >
                 <Phone className="w-4 h-4 fill-current" />
-                <span>Call Now</span>
-              </a>
+                <span>Free Pickup & Drop</span>
+              </motion.a>
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -237,6 +250,13 @@ export default function App() {
                   Services
                 </a>
                 <a
+                  href="#monthly-plan"
+                  onClick={(e) => handleLinkClick(e, 'monthly-plan')}
+                  className="text-lg font-medium text-gray-300 hover:text-cyan-400 py-2 border-b border-gray-800/30 transition-colors"
+                >
+                  Monthly Plan
+                </a>
+                <a
                   href="#contact"
                   onClick={(e) => handleLinkClick(e, 'contact')}
                   className="text-lg font-medium text-gray-300 hover:text-cyan-400 py-2 transition-colors"
@@ -244,13 +264,19 @@ export default function App() {
                   Contact Us
                 </a>
 
-                <a
+                <motion.a
                   href="tel:+919992225924"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-teal-500 text-black font-semibold rounded-full shadow-lg shadow-cyan-400/20 active:scale-95 transition-all duration-200"
+                  animate={{
+                    backgroundColor: ['#22d3ee', '#ef4444', '#22d3ee'],
+                    boxShadow: ['0px 0px 15px rgba(34,211,238,0.4)', '0px 0px 25px rgba(239,68,68,0.7)', '0px 0px 15px rgba(34,211,238,0.4)'],
+                    color: ['#000000', '#ffffff', '#000000']
+                  }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 font-bold rounded-full active:scale-95 transition-transform duration-200"
                 >
                   <Phone className="w-4 h-4 fill-current" />
-                  <span>Call Now</span>
-                </a>
+                  <span>Free Pickup & Drop</span>
+                </motion.a>
               </div>
             </motion.div>
           )}
@@ -541,7 +567,7 @@ export default function App() {
                       <div>
                         <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">Time Commitment</span>
                         <span className="text-lg font-black text-cyan-400">
-                          {service.id === 'wash' ? '45 - 60 Mins' : service.id === 'detailing' ? '4 - 8 Hours' : 'Open Stay'}
+                          {service.id === 'wash' ? '30 - 60 Mins' : service.id === 'detailing' ? '4 - 8 Hours' : 'Open Stay'}
                         </span>
                       </div>
                     </div>
@@ -574,6 +600,177 @@ export default function App() {
               )
             })}
           </motion.div>
+
+        </div>
+      </section>
+
+      {/* Monthly Plans Section */}
+      <section id="monthly-plan" className="py-24 md:py-32 relative bg-[#0B0F17] border-t border-gray-800/60 overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Top Centered Header Content */}
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-300 mb-2 uppercase tracking-wide">
+              EXCLUSIVE FOR <span className="text-cyan-400 font-serif italic text-3xl sm:text-4xl capitalize">Monthly Plans</span>
+            </h3>
+            <h4 className="text-lg sm:text-xl text-gray-400 italic mb-6 font-serif">Trusted Premium Car Care</h4>
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-10 max-w-3xl">
+              Your car deserves the best, and we are here to provide it. With 6 years of professional experience and the trust of many happy customers, we ensure your vehicle gets the expert care it needs to shine like new.
+            </p>
+
+            {/* Premium Microfiber moved here */}
+            <div className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#131A2A] to-[#0F1422] border border-gray-700/80 rounded-full shadow-[0_0_30px_rgba(34,211,238,0.1)] hover:scale-105 transition-transform duration-300">
+              <Sparkles className="w-6 h-6 text-cyan-400" />
+              <span className="text-xl font-black text-white uppercase tracking-widest">Premium Microfiber <span className="font-serif italic text-cyan-400 font-normal normal-case">Finish</span></span>
+              <Sparkles className="w-6 h-6 text-cyan-400" />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-12 mb-16">
+
+            {/* Offer Banner (Full Width) */}
+            <div className="w-full">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 justify-between bg-[#131A2A]/80 border border-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent pointer-events-none" />
+                <div className="relative z-10">
+                  <h2 className="text-2xl sm:text-3xl font-black text-white tracking-wide">EXCLUSIVE RESIDENTIAL OFFER</h2>
+                  <h3 className="text-xl sm:text-2xl font-bold text-red-500 mt-2 uppercase tracking-widest">Monthly Plans</h3>
+                  <p className="text-sm sm:text-base text-gray-400 mt-3 max-w-2xl">
+                    Keep your car sparkling year-round with our affordable and convenient monthly subscription plans
+                  </p>
+                </div>
+                <motion.div
+                  animate={{ scale: [1, 1.05, 1], rotate: [0, -3, 3, -3, 3, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative z-10 flex items-center gap-4 bg-[#0F1422] p-4 rounded-xl border border-cyan-900/50 flex-shrink-0 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+                >
+                  <div className="bg-cyan-950 p-3 rounded-lg text-cyan-400">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                  </div>
+                  <div className="text-center pr-2">
+                    <span className="block text-base font-black text-white uppercase tracking-wider">Free</span>
+                    <span className="block text-xs font-bold text-cyan-400 uppercase tracking-widest">Pickup & Drop</span>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Table (Full Width) */}
+            <div className="w-full">
+              <div className="bg-white rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.4)] border-4 border-gray-100">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-center border-collapse">
+                    <thead>
+                      <tr className="bg-white border-b-2 border-gray-200">
+                        <th className="py-6 px-6 text-black font-black text-lg sm:text-xl uppercase tracking-wider w-1/4 text-left">Vehicle <br /><span className="text-sm text-gray-500 font-bold">Category</span></th>
+                        <th className="py-6 px-6 text-black font-black text-lg sm:text-xl uppercase tracking-wider w-1/4">Normal</th>
+                        <th className="py-6 px-6 text-black font-black text-lg sm:text-xl uppercase tracking-wider w-1/4">Monthly</th>
+                        <th className="py-6 px-6 text-black font-black text-lg sm:text-xl uppercase tracking-wider w-1/4">Year</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-black bg-white">
+                      {/* Hatchback */}
+                      <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                        <td className="py-7 px-6 font-black text-xl text-left tracking-wide">HATCHBACK</td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">499</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">PER WASH</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative bg-gray-50/50">
+                          <span className="block font-black text-3xl">1799</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">(4 WASH)</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">12599</span>
+                          <span className="block text-[10px] font-bold text-gray-600 leading-tight mt-1 uppercase tracking-widest">(24 WASH) + 1 INTERIOR<br />CLEANING</span>
+                        </td>
+                      </tr>
+                      {/* Sedan */}
+                      <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                        <td className="py-7 px-6 font-black text-xl text-left leading-tight tracking-wide">SEDAN &<br />COMPACT SUV</td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">549</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">PER WASH</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative bg-gray-50/50">
+                          <span className="block font-black text-3xl">1999</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">(4 WASH)</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">13999</span>
+                          <span className="block text-[10px] font-bold text-gray-600 leading-tight mt-1 uppercase tracking-widest">(24 WASH) + 1 INTERIOR<br />CLEANING</span>
+                        </td>
+                      </tr>
+                      {/* SUV */}
+                      <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                        <td className="py-7 px-6 font-black text-2xl text-left tracking-wide">SUV</td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">599</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">PER WASH</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative bg-gray-50/50">
+                          <span className="block font-black text-3xl">2199</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">(4 WASH)</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">15999</span>
+                          <span className="block text-[10px] font-bold text-gray-600 leading-tight mt-1 uppercase tracking-widest">(24 WASH) + 1 INTERIOR<br />CLEANING</span>
+                        </td>
+                      </tr>
+                      {/* Premium */}
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="py-7 px-6 font-black text-xl text-left tracking-wide">PREMIUM</td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">699</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">PER WASH</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative bg-gray-50/50">
+                          <span className="block font-black text-3xl">2599</span>
+                          <span className="block text-[11px] font-bold text-gray-500 tracking-widest mt-1">(4 WASH)</span>
+                        </td>
+                        <td className="py-7 px-6 border-l border-gray-100 relative">
+                          <span className="block font-black text-3xl">19999</span>
+                          <span className="block text-[10px] font-bold text-gray-600 leading-tight mt-1 uppercase tracking-widest">(24 WASH) + 1 INTERIOR<br />CLEANING</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Cleaning Process Features (Full Width) */}
+            <div className="w-full">
+              <div className="bg-gradient-to-r from-[#131A2A]/80 via-[#0B0F17]/90 to-[#131A2A]/80 border border-gray-800 rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
+
+                <div className="text-center lg:text-left flex-shrink-0 lg:w-1/3">
+                  <h3 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-wider mb-2">Our Specialized</h3>
+                  <span className="font-serif italic text-2xl sm:text-3xl text-cyan-400 block mb-6">Cleaning Process</span>
+                  <div className="h-1 w-24 bg-cyan-500/50 mx-auto lg:ml-0 rounded-full" />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-center lg:text-left">
+                  <div className="bg-[#0B0F17]/50 p-6 rounded-2xl border border-gray-800/50 hover:border-cyan-900/50 transition-colors">
+                    <h4 className="text-base font-bold text-white uppercase tracking-wider mb-3 text-cyan-50">Deep Underbody Cleaning</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">High-pressure cleaning to remove hidden dirt and prevent corrosion.</p>
+                  </div>
+                  <div className="bg-[#0B0F17]/50 p-6 rounded-2xl border border-gray-800/50 hover:border-cyan-900/50 transition-colors">
+                    <h4 className="text-base font-bold text-white uppercase tracking-wider mb-3 text-cyan-50">Step-By-Step Washing</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">A scientific, multi-stage process for a thorough and safe clean.</p>
+                  </div>
+                  <div className="bg-[#0B0F17]/50 p-6 rounded-2xl border border-gray-800/50 hover:border-cyan-900/50 transition-colors">
+                    <h4 className="text-base font-bold text-white uppercase tracking-wider mb-3 text-cyan-50">Detailed Interior Care</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">Preferred cleaning techniques for your dashboard, mats, and upholstery.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>
