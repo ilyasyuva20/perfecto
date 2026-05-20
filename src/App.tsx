@@ -266,7 +266,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="w-full border-b border-gray-800/80 rounded-none overflow-hidden shadow-2xl relative aspect-[16/9] md:aspect-[21/9] group"
+            className="w-full border-b border-gray-800/80 rounded-none overflow-hidden shadow-2xl relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] group"
           >
             <AnimatePresence mode="wait">
               <motion.div
